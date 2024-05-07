@@ -14,6 +14,9 @@ const ProductRow = ({
       width: propWidth,
     };
   }, [propAlignSelf, propWidth]);
+  const Stock=pdt.Stock;
+  const minStock=pdt.minStock;
+  const Status = Stock >= minStock ? "in stock" : "low stock";
 
   
   const frameDivStyle = useMemo(() => {
@@ -36,14 +39,13 @@ const ProductRow = ({
           <div className="lorem-ipsum1">{pdt.unitsPerStock}</div>
         </div>
         <div className="product-button3">
-          <div className="div23">{pdt.Supplier}</div>
+          <div className="div23">{pdt.brandName}</div>
         </div>
         <div className="product-button4">
           <div className="div24">{pdt.unitPrice}</div>
         </div>
         <div className="status1">
-          <img className="vector-icon4" alt="" src="/vector-2.svg" />
-          <div className="in-stock">{pdt.Status}</div>
+          <div className="in-stock">{Status}</div>
         </div>
         <div className="product-button5">
           <div className="div25">{pdt.Stock}</div>
