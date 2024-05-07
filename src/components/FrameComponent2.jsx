@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback , useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProductRow from "./ProductRow";
 import "./FrameComponent2.css";
@@ -6,7 +6,26 @@ import Filter from "./filter";
 import SidePanel2 from "../components/SidePanel2";
 import pdtdata from "./productdata";
 const FrameComponent = () => {
+
   const navigate = useNavigate();
+  const [getProduct, setProduct] = useState([]);
+
+  useEffect(()=>{
+
+   (async ()=> {
+    const response= await fetch('http://localhost:8000/api/products/',{
+      method:'GET',
+      headers:{
+        'Content-Type':'application/json'
+      }
+      
+    })
+    const data= await response.json();
+     if(data?.data?.products){
+      setProduct(data?.data?.products);
+     }
+  })();
+  },[])
 
   const onButtonContainerClick = useCallback(() => {
     navigate("/edit-stock-page");
@@ -60,9 +79,9 @@ const FrameComponent = () => {
               </div>
             </div>
           </div>
-          {pdtdata.map((val, key) => {
+          {getProduct.map((val) => {
                     return (
-          <ProductRow
+          <ProductRow key={val._id}
             onButtonContainerClick={onButtonContainerClick}
             onButtonContainer2Click={onButtonContainer2Click}
             pdt={val}

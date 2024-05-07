@@ -12,7 +12,7 @@ const NewProduct = () => {
 
   const handleSubmit=async (e)=>{
     e.preventDefault();
-    const response= await fetch('http://localhost:8080/demo',{
+    const response= await fetch('http://localhost:8000/api/products/',{
       method:'POST',
       body:JSON.stringify(form),
       headers:{
@@ -22,6 +22,7 @@ const NewProduct = () => {
     })
     const data= await response.json();
     console.log(data);
+    navigate("/inventory-page");
   }
   const handlepdt=(e)=>{
     setForm({
@@ -42,25 +43,25 @@ const NewProduct = () => {
           <TextInputs
             inputTextLabel="Name"
             input_type="text"
-            pname="pname"
+            pname="product_name"
             tchange={handlepdt}
           />
           <TextInputs
             inputTextLabel="description"
             input_type="text"
-            pname="pdesp"
+            pname="description"
             tchange={handlepdt}
           />
           <Dropdowns
             dchange={handlepdt}
             dname="category"
           />
-          <TextInputs
+          {/* <TextInputs
             inputTextLabel="Brand"
             input_type="text"
-            pname="pbrand"
+            pname="brandId"
             tchange={handlepdt}
-          />
+          /> */}
           <TextInputs
             inputTextLabel="Unit Per stock"
             input_type="number"
@@ -82,12 +83,12 @@ const NewProduct = () => {
           <TextInputs
             inputTextLabel="Price"
             input_type="number"
-            pname="pprice"
+            pname="unitPrice"
             tchange={handlepdt}
             
           />
           
-          <input className="button42" type="submit" onClick={onButtonClick} />
+          <input className="button42" type="submit"  />
           <button className="button42" onClick={onButtonClick} >
             <div className="content12">Cancel</div>
           </button>

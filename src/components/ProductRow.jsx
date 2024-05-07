@@ -30,7 +30,7 @@ const ProductRow = ({
           <div className="div22">{pdt.id}</div>
         </div>
         <div className="product-button1">
-          <div className="product-a">{pdt.name}</div>
+          <div className="product-a">{pdt.product_name}</div>
         </div>
         <div className="product-button2">
           <div className="lorem-ipsum1">{pdt.brand}</div>
@@ -39,7 +39,7 @@ const ProductRow = ({
           <div className="div23">{pdt.supplier}</div>
         </div>
         <div className="product-button4">
-          <div className="div24">{pdt.price}</div>
+          <div className="div24">{pdt.unitPrice}</div>
         </div>
         <div className="status1">
           <img className="vector-icon4" alt="" src="/vector-2.svg" />
