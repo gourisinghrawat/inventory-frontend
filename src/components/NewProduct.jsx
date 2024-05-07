@@ -56,12 +56,12 @@ const NewProduct = () => {
             dchange={handlepdt}
             dname="category"
           />
-          {/* <TextInputs
+          <TextInputs
             inputTextLabel="Brand"
             input_type="text"
             pname="brandId"
             tchange={handlepdt}
-          /> */}
+          />
           <TextInputs
             inputTextLabel="Unit Per stock"
             input_type="number"

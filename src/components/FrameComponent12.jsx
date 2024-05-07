@@ -1,4 +1,4 @@
-import TextInputs1 from "./TextInputs1";
+import TextInputs from "./TextInputs";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "./FrameComponent12.css";
@@ -17,7 +17,11 @@ const FrameComponent12 = () => {
         <div className="background62" />
         <div className="product-a-parent">
           <div className="product-a3">Product A</div>
-          <TextInputs1 />
+          <TextInputs
+            inputTextLabel="enter stock amount"
+            input_type="number"
+            
+          />
         </div>
         <div className="either-or">
           <div className="radio-button">
