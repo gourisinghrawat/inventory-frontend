@@ -70,7 +70,7 @@ const FrameComponent = () => {
                 <div className="i-d-name-brand">
                   <div className="id1">ID</div>
                   <div className="name6">Name</div>
-                  <div className="brand">brand</div>
+                  <div className="brand">units per stock</div>
                   <div className="supplier">Supplier</div>
                   <div className="price">Price</div>
                   <div className="status2">Status</div>

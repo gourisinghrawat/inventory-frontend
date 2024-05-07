@@ -10,7 +10,7 @@ const Date1 = ({ propFlex, propMinWidth, propWidth }) => {
     };
   }, [propFlex, propMinWidth, propWidth]);
   const today = new Date();
-  const month = today.getMonth()+1;
+  const month = today.getMonth();
 const year = today.getFullYear();
 const date = today. getDate();
 const wmonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];

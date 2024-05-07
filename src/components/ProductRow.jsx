@@ -27,26 +27,26 @@ const ProductRow = ({
       <div className="product-row-child" />
       <div className="product-button-parent" style={frameDivStyle}>
         <div className="product-button">
-          <div className="div22">{pdt.id}</div>
+          <div className="div22">{(pdt._id).slice(-4)}</div>
         </div>
         <div className="product-button1">
           <div className="product-a">{pdt.product_name}</div>
         </div>
         <div className="product-button2">
-          <div className="lorem-ipsum1">{pdt.brand}</div>
+          <div className="lorem-ipsum1">{pdt.unitsPerStock}</div>
         </div>
         <div className="product-button3">
-          <div className="div23">{pdt.supplier}</div>
+          <div className="div23">{pdt.Supplier}</div>
         </div>
         <div className="product-button4">
           <div className="div24">{pdt.unitPrice}</div>
         </div>
         <div className="status1">
           <img className="vector-icon4" alt="" src="/vector-2.svg" />
-          <div className="in-stock">{pdt.status}</div>
+          <div className="in-stock">{pdt.Status}</div>
         </div>
         <div className="product-button5">
-          <div className="div25">{pdt.stock}</div>
+          <div className="div25">{pdt.Stock}</div>
         </div>
         <div className="product-button6">
           <div className="button38" onClick={onButtonContainerClick}>
